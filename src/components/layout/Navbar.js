@@ -7,7 +7,7 @@ const Navbar = () => (
   <nav className="nav-wrapper grey darken-3">
     <div className="container">
       <Link to="/" className="brand-logo">
-        Ghaandhi land
+        Ghandhi land
       </Link>
       <SignedInLinks />
       <SignedOutLinks />
