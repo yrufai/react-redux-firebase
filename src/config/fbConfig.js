@@ -1,7 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-var config = {
+
+var firebaseConfig = {
   apiKey: "AIzaSyCvA3HysrYJVDr2DyIVv_Bq3ZykrTwvkEU",
   authDomain: "ghandhi-land.firebaseapp.com",
   databaseURL: "https://ghandhi-land.firebaseio.com",
@@ -11,7 +12,7 @@ var config = {
   appId: "1:91387781691:web:a89f8da35b1f4fc3"
 };
 // Initialize Firebase
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase;
