@@ -1,7 +1,3 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
-
 var firebaseConfig = {
   apiKey: "AIzaSyCvA3HysrYJVDr2DyIVv_Bq3ZykrTwvkEU",
   authDomain: "ghandhi-land.firebaseapp.com",
@@ -12,5 +8,5 @@ var firebaseConfig = {
   appId: "1:91387781691:web:a89f8da35b1f4fc3"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-export default firebase;
+
+export default firebaseConfig;
