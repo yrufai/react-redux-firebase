@@ -21,7 +21,7 @@ firebase.firestore();
 const initialState = {};
 
 const store = createStore(
-  rootReducer(),
+  rootReducer,
   initialState,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),

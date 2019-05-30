@@ -7,12 +7,12 @@ import { compose } from "redux";
 class Dashboard extends Component {
   render() {
     //console.log(this.props);
-    const { projects } = this.props;
+    const { users } = this.props;
     return (
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
-            <ProjectList projects={projects} />
+            <ProjectList projects={users} />
           </div>
           <div className="col s12 m5 offset-m1">
             <Notifications />
@@ -26,7 +26,7 @@ class Dashboard extends Component {
 const mapStateToProps = (state, ownProps) => {
   console.log(state);
   return {
-    projects: state.firestore.ordered.projects
+    users: state.firestore.ordered.projects
   };
 };
 
