@@ -8,14 +8,8 @@ import "firebase/firestore";
 import "firebase/auth";
 import firebaseConfig from "../config/fbConfig";
 import thunk from "redux-thunk";
-firebase.initializeApp(firebaseConfig);
-firebase.firestore();
-
-/*const createStoreWithFirebase = compose(
-  thunk.withExtraArgument(getFirebase, getFirestore),
-  reduxFirestore(firebase),
-  reactReduxFirebase(firebaseConfig, rrfConfig)
-)(createStore);*/
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+firebaseApp.firestore();
 
 const initialState = {};
 
@@ -24,9 +18,10 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reactReduxFirebase(firebase, rrfConfig),
-    reduxFirestore(firebase)
+    reactReduxFirebase(firebaseApp, rrfConfig),
+    reduxFirestore(firebaseApp)
   )
+  //console.log(getFirebase)
 );
 
 export default store;

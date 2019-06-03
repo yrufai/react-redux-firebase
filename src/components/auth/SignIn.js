@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { signInAction } from "../../store/actions/authActions";
+import signInAction from "../../store/actions/authActions";
 class SignIn extends Component {
   state = {
     email: "",

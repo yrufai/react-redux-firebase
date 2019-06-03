@@ -1,6 +1,7 @@
-export const signInAction = credentials => {
-  return (dispatch, getState, { getfirebase }) => {
-    const firebase = getfirebase();
+const signInAction = credentials => {
+  return (dispatch, getState, { getfirebase, getfirestore }) => {
+    const firebase = getState.firebase;
+    console.log(firebase);
     firebase
       .auth()
       .signInWithEmailAndPassword(credentials.email, credentials.password)
@@ -12,3 +13,5 @@ export const signInAction = credentials => {
       });
   };
 };
+
+export default signInAction;
