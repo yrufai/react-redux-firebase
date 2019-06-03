@@ -23,5 +23,4 @@ const store = createStore(
   )
   //console.log(getFirebase)
 );
-
 export default store;
