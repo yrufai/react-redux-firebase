@@ -18,8 +18,8 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reactReduxFirebase(firebaseApp, rrfConfig),
-    reduxFirestore(firebaseApp)
+    reactReduxFirebase(firebase, rrfConfig),
+    reduxFirestore(firebase)
   )
   //console.log(getFirebase)
 );

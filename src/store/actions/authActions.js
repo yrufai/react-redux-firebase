@@ -1,6 +1,6 @@
-const signInAction = credentials => {
-  return (dispatch, getState, { getfirebase, getfirestore }) => {
-    const firebase = getState.firebase;
+export const signInAction = credentials => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firebase = getFirebase();
     console.log(firebase);
     firebase
       .auth()
@@ -14,4 +14,14 @@ const signInAction = credentials => {
   };
 };
 
-export default signInAction;
+export const signOut = () => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch({ type: "SIGNOUT_SUCCESS" });
+      });
+  };
+};
