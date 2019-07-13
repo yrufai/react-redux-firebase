@@ -16,7 +16,7 @@ const Navbar = props => {
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
         <Link to="/" className="brand-logo">
-          Ghandhi landd
+          Ghandhi land
         </Link>
         {links}
       </div>
